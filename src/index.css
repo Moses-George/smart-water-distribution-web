@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-/* @import "shadcn/tailwind.css"; */
+@import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark, .dark *));
@@ -105,7 +105,7 @@
 
 /* Dark override */
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(19% .03 230);
   --foreground: oklch(0.985 0 0);
   --panel: oklch(0.23 0.035 232);
   --panel-2: oklch(0.27 0.04 234);
@@ -162,8 +162,8 @@
   }
   .dark body {
     background:
-      radial-gradient(ellipse at top left, oklch(0.28 0.08 200 / 30%), transparent 50%),
-      radial-gradient(ellipse at bottom right, oklch(0.28 0.08 260 / 25%), transparent 50%),
+      radial-gradient(ellipse at top left, oklch(28% .08 200 / .3), transparent 50%),
+      radial-gradient(ellipse at bottom right, oklch(28% .08 260 / .25), transparent 50%),
       var(--color-background);
   }
   html {
