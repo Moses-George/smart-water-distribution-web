@@ -5,6 +5,8 @@ import App from './App.tsx'
 import { Provider } from 'react-redux'
 import { store } from '@/store/store'
 import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -12,14 +14,14 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
-      {/* <ToastContainer
+      <ToastContainer
         position="top-center"
         className={`z-[99999] `}
         // style={{ zIndex: "999999 !important" }}
         hideProgressBar={true}
         // toastClassName={() => "p- bg-trans"}
         // icon={CustomIcon}
-      /> */}
+      />
     </Provider>
   </StrictMode>,
 )

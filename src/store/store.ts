@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import networkReducer from "./slices/networkSlice";
+// import networkReducer from "./slices/networkSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { baseApi } from "./baseApi";
-import authReducer from "./slices/authSlice";
-import networkUiReducer from "./slices/networkUiSlice";
+// import authReducer from "./slices/authSlice";
+// import networkUiReducer from "./slices/networkUiSlice";
+import { networkSyncMiddleware } from "./middleware/syncMiddleware";
+import { rootReducer } from "./rootReducer";
 
 // Register endpoint injections (side-effect imports).
 import "./api/authApi";
@@ -19,17 +21,24 @@ import "./api/maintenanceApi";
 import "./api/qualityApi";
 import "./api/carbonApi";
 
+// export const store = configureStore({
+//   reducer: {
+//     network: networkReducer,
+//     [baseApi.reducerPath]: baseApi.reducer,
+//     auth: authReducer,
+//     networkUi: networkUiReducer,
+//   },
+//   middleware: (gDM) => gDM().concat(baseApi.middleware, networkSyncMiddleware),
+// });
+
 export const store = configureStore({
-  reducer: {
-    network: networkReducer,
-    [baseApi.reducerPath]: baseApi.reducer,
-    auth: authReducer,
-    networkUi: networkUiReducer,
-  },
-  middleware: (gDM) => gDM().concat(baseApi.middleware),
+    reducer: rootReducer,
+    middleware: (gDM) =>
+        gDM().concat(baseApi.middleware, networkSyncMiddleware),
 });
+
 
 setupListeners(store.dispatch);
 
-export type RootState = ReturnType<typeof store.getState>;
+// export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

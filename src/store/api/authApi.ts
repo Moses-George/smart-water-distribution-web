@@ -1,8 +1,10 @@
 import { baseApi } from "../baseApi";
+import type { IUser } from "../slices/authSlice";
 
-interface Token {
+interface ICredentials {
   access_token: string;
   token_type: string;
+  user: IUser
 }
 interface Me {
   id: number;
@@ -11,14 +13,14 @@ interface Me {
 }
 
 export const authApi = baseApi.injectEndpoints({
-  endpoints: (b) => ({
-    login: b.mutation<Token, { email: string; password: string }>({
+  endpoints: (builder) => ({
+    login: builder.mutation<ICredentials, { email: string; password: string }>({
       query: (body) => ({ url: "/api/auth/login", method: "POST", body }),
     }),
-    register: b.mutation<Token, { email: string; password: string }>({
+    register: builder.mutation<ICredentials, { email: string; password: string }>({
       query: (body) => ({ url: "/api/auth/register", method: "POST", body }),
     }),
-    me: b.query<Me, void>({
+    me: builder.query<Me, void>({
       query: () => "/api/auth/me",
       providesTags: ["Me"],
     }),

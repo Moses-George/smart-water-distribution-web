@@ -8,8 +8,8 @@ export interface CarbonOut {
 }
 
 export const carbonApi = baseApi.injectEndpoints({
-  endpoints: (b) => ({
-    carbon: b.query<CarbonOut, number>({
+  endpoints: (builder) => ({
+    carbon: builder.query<CarbonOut, number>({
       query: (nid) => `/api/networks/${nid}/carbon`,
       providesTags: (_r, _e, nid) => [{ type: "Carbon", id: `${nid}` }],
     }),

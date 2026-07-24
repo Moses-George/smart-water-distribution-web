@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState, AppDispatch } from "@/store/store";
+import type { AppDispatch } from "@/store/store";
 // import {
 //   selectNodes,
 //   selectPipes,
@@ -29,6 +29,7 @@ import {
   runLeakDetection,
   runScenario,
 } from "@/store/slices/networkSlice";
+import type { RootState } from "@/store/rootReducer";
 
 // // This hook takes a selector function
 // export const useNetwork = <T>(selector: (state: RootState["network"]) => T): T => {

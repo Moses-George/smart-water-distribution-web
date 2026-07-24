@@ -17,24 +17,25 @@ export interface NodeOut {
 }
 
 export const nodesApi = baseApi.injectEndpoints({
-  endpoints: (b) => ({
-    listNodes: b.query<NodeOut[], number>({
+  endpoints: (builder) => ({
+    listNodes: builder.query<NodeOut[], number>({
       query: (nid) => `/api/networks/${nid}/nodes`,
       providesTags: (_r, _e, nid) => [{ type: "Node", id: `LIST-${nid}` }],
     }),
-    createNode: b.mutation<NodeOut, { nid: number; body: Omit<NodeOut, "id"> }>(
-      {
-        query: ({ nid, body }) => ({
-          url: `/api/networks/${nid}/nodes`,
-          method: "POST",
-          body,
-        }),
-        invalidatesTags: (_r, _e, { nid }) => [
-          { type: "Node", id: `LIST-${nid}` },
-        ],
-      },
-    ),
-    patchNode: b.mutation<
+    createNode: builder.mutation<
+      NodeOut,
+      { nid: number; body: Omit<NodeOut, "id"> }
+    >({
+      query: ({ nid, body }) => ({
+        url: `/api/networks/${nid}/nodes`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: (_r, _e, { nid }) => [
+        { type: "Node", id: `LIST-${nid}` },
+      ],
+    }),
+    patchNode: builder.mutation<
       NodeOut,
       { nid: number; id: number; body: Partial<NodeOut> }
     >({
@@ -47,7 +48,7 @@ export const nodesApi = baseApi.injectEndpoints({
         { type: "Node", id: `LIST-${nid}` },
       ],
     }),
-    deleteNode: b.mutation<void, { nid: number; id: number }>({
+    deleteNode: builder.mutation<void, { nid: number; id: number }>({
       query: ({ nid, id }) => ({
         url: `/api/networks/${nid}/nodes/${id}`,
         method: "DELETE",
