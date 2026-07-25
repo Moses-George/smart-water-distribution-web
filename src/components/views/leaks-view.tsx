@@ -157,7 +157,7 @@ export default function LeaksView() {
   };
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-[1fr_420px] gap-6">
+    <div className="grid grid-cols-1 xl:grid-cols-[6.5fr_3.5fr] gap-6">
       <Panel
         title="Live leak likelihood map"
         subtitle={

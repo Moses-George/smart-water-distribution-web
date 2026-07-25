@@ -23,7 +23,7 @@ const Auth = () => {
     setError,
     formState: { errors },
   } = useForm<IAuthForm>({
-    defaultValues: { email: "", password: "" },
+    defaultValues: { email: "demo@aquaflow.io", password: "demo1234" },
   });
 
   const [authorizeUser, { isLoading }] = useLoginMutation();
@@ -70,7 +70,7 @@ const Auth = () => {
             <input
               {...register("email", { required: "email is required" })}
               type="email"
-              className="mt-1 w-full font-jakarta px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full text-black font-jakarta px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
             {errors.email && (
               <p className="text-red-500 font-jakarta text-xs mt-1">
@@ -85,7 +85,7 @@ const Auth = () => {
             <input
               {...register("password", { required: "password is required" })}
               type="password"
-              className="mt-1 w-full font-jakarta px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full text-black font-jakarta px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
             {errors.password && (
               <p className="text-red-500 font-jakarta text-xs mt-1">

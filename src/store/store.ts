@@ -6,6 +6,7 @@ import { baseApi } from "./baseApi";
 // import networkUiReducer from "./slices/networkUiSlice";
 import { networkSyncMiddleware } from "./middleware/syncMiddleware";
 import { rootReducer } from "./rootReducer";
+import { auditMiddleware } from "./middleware/auditMiddleware";
 
 // Register endpoint injections (side-effect imports).
 import "./api/authApi";
@@ -20,6 +21,7 @@ import "./api/forecastApi";
 import "./api/maintenanceApi";
 import "./api/qualityApi";
 import "./api/carbonApi";
+import "./api/topologyApi";
 
 // export const store = configureStore({
 //   reducer: {
@@ -32,11 +34,10 @@ import "./api/carbonApi";
 // });
 
 export const store = configureStore({
-    reducer: rootReducer,
-    middleware: (gDM) =>
-        gDM().concat(baseApi.middleware, networkSyncMiddleware),
+  reducer: rootReducer,
+  middleware: (gDM) =>
+    gDM().concat(baseApi.middleware, auditMiddleware, networkSyncMiddleware),
 });
-
 
 setupListeners(store.dispatch);
 
