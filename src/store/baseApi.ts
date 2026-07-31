@@ -7,12 +7,13 @@ import {
 } from "@reduxjs/toolkit/query/react";
 import type { RootState } from "./rootReducer";
 import { logout } from "./slices/authSlice";
+import { VITE_ENDPOINT_URL } from "@/lib/variables";
 
 const rawBaseQuery = fetchBaseQuery({
-  baseUrl:
-    (typeof window !== "undefined" &&
-      (window as unknown as { __API_BASE__?: string }).__API_BASE__) ||
-    "http://localhost:8000",
+  baseUrl:VITE_ENDPOINT_URL,
+    // (typeof window !== "undefined" &&
+    //   (window as unknown as { __API_BASE__?: string }).__API_BASE__) ||
+    // "http://localhost:8000",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
     if (token) headers.set("Authorization", `Bearer ${token}`);
