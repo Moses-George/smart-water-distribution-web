@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-const TOKEN_KEY = "aquaflow.token";
+// const TOKEN_KEY = "aquaflow.token";
 
 export interface IUser {
   id: number;

@@ -288,7 +288,7 @@ import {
 import { toast } from "react-toastify";
 import { normalizeError } from "@/utils/helpers";
 import { ClipLoader } from "react-spinners";
-import type { ScenarioMetrics } from "@/types/network";
+// import type { ScenarioMetrics } from "@/types/network";
 import type { RootState } from "@/store/rootReducer";
 
 type Kind = "pop" | "pump" | "burst" | "res" | "solar";
@@ -443,23 +443,23 @@ export default function ScenarioView() {
 }
 
 
-function ScenarioMetricList({ metrics }: { metrics: ScenarioMetrics }) {
-  const rows = [
-    { l: "Peak demand", v: `${metrics.peakDemand} L/s` },
-    { l: "Min pressure", v: `${metrics.minPressure} m` },
-    { l: "Avg pressure", v: `${metrics.avgPressure} m` },
-    { l: "Daily energy", v: `${metrics.energyKWh.toLocaleString()} kWh` },
-    { l: "CO₂", v: `${metrics.co2t} t` },
-    { l: "Active leaks", v: `${metrics.activeLeaks}` },
-  ];
-  return (
-    <ul className="space-y-2 text-sm">
-      {rows.map((r) => (
-        <li key={r.l} className="flex items-center justify-between border-b border-border/50 pb-1.5">
-          <span className="text-muted-foreground text-xs">{r.l}</span>
-          <span className="font-mono">{r.v}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
+// function ScenarioMetricList({ metrics }: { metrics: ScenarioMetrics }) {
+//   const rows = [
+//     { l: "Peak demand", v: `${metrics.peakDemand} L/s` },
+//     { l: "Min pressure", v: `${metrics.minPressure} m` },
+//     { l: "Avg pressure", v: `${metrics.avgPressure} m` },
+//     { l: "Daily energy", v: `${metrics.energyKWh.toLocaleString()} kWh` },
+//     { l: "CO₂", v: `${metrics.co2t} t` },
+//     { l: "Active leaks", v: `${metrics.activeLeaks}` },
+//   ];
+//   return (
+//     <ul className="space-y-2 text-sm">
+//       {rows.map((r) => (
+//         <li key={r.l} className="flex items-center justify-between border-b border-border/50 pb-1.5">
+//           <span className="text-muted-foreground text-xs">{r.l}</span>
+//           <span className="font-mono">{r.v}</span>
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }

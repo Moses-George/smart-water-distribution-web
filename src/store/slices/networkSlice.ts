@@ -485,7 +485,7 @@ const networkSlice = createSlice({
         state.nodes.push(node);
         state.selectedId = id;
         state.selectedPipeId = null;
-      },
+      }, 
       prepare: (type: NodeType, x: number, y: number) => ({ payload: { type, x, y } }),
     },
     moveNode: (state, action: PayloadAction<{ id: string; x: number; y: number }>) => {

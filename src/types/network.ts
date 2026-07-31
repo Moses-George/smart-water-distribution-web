@@ -92,33 +92,33 @@ export interface ScenarioResult {
   ranAt: number;
 }
 
-interface State {
-  nodes: NetworkNode[];
-  pipes: NetworkPipe[];
-  tool: Tool;
-  selectedId: string | null;
-  selectedPipeId: string | null;
-  connectFrom: string | null;
+// interface State {
+//   nodes: NetworkNode[];
+//   pipes: NetworkPipe[];
+//   tool: Tool;
+//   selectedId: string | null;
+//   selectedPipeId: string | null;
+//   connectFrom: string | null;
 
-  scheduleResult: ScheduleResult | null;
-  leakResult: LeakResult | null;
-  scenarioResult: ScenarioResult | null;
+//   scheduleResult: ScheduleResult | null;
+//   leakResult: LeakResult | null;
+//   scenarioResult: ScenarioResult | null;
 
-  setTool: (t: Tool) => void;
-  select: (id: string | null) => void;
-  selectPipe: (id: string | null) => void;
-  addNodeAt: (type: NodeType, x: number, y: number) => void;
-  moveNode: (id: string, x: number, y: number) => void;
-  updateNode: (id: string, patch: Partial<NetworkNode>) => void;
-  updatePipe: (id: string, patch: Partial<NetworkPipe>) => void;
-  deleteNode: (id: string) => void;
-  deletePipe: (id: string) => void;
-  connectNodes: (from: string, to: string) => void;
-  setConnectFrom: (id: string | null) => void;
-  reset: () => void;
-  clear: () => void;
+//   setTool: (t: Tool) => void;
+//   select: (id: string | null) => void;
+//   selectPipe: (id: string | null) => void;
+//   addNodeAt: (type: NodeType, x: number, y: number) => void;
+//   moveNode: (id: string, x: number, y: number) => void;
+//   updateNode: (id: string, patch: Partial<NetworkNode>) => void;
+//   updatePipe: (id: string, patch: Partial<NetworkPipe>) => void;
+//   deleteNode: (id: string) => void;
+//   deletePipe: (id: string) => void;
+//   connectNodes: (from: string, to: string) => void;
+//   setConnectFrom: (id: string | null) => void;
+//   reset: () => void;
+//   clear: () => void;
 
-  optimizeSchedule: () => void;
-  runLeakDetection: () => void;
-  runScenario: (id: ScenarioId) => void;
-}
+//   optimizeSchedule: () => void;
+//   runLeakDetection: () => void;
+//   runScenario: (id: ScenarioId) => void;
+// }

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // import type { Middleware } from "@reduxjs/toolkit";
 // import { nodesApi } from "@/store/api/nodesApi";
 // import { pipesApi } from "@/store/api/pipesApi";
@@ -304,7 +306,6 @@ function rollback(
     material: p.material,
     age: p.age,
   }));
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dispatch(
     hydrateNetwork({
       nodes: nodesApiShape as any,

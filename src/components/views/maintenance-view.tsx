@@ -263,7 +263,7 @@ export default function MaintenanceView() {
                 </tr>
               </thead>
               <tbody>
-                {assets.map((a) => {
+                {assets?.map((a) => {
                   const tone = a.rul < 30 ? "danger" : a.rul < 100 ? "warning" : "success";
                   return (
                     <tr key={a.id} className="border-b border-border/50">
