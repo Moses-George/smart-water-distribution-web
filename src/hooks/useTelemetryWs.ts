@@ -2,9 +2,10 @@ import { setWsConnected, setLiveKpi } from "@/store/slices/networkUiSlice";
 import type { AppDispatch } from "@/store/store";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { VITE_WS_ENDPOINT_URL } from "@/lib/variables";
 
 /** Subscribes to backend /ws/telemetry and streams KPI updates into Redux. */
-export function useTelemetryWs(url = "ws://localhost:8000/ws/telemetry") {
+export function useTelemetryWs(url = `${VITE_WS_ENDPOINT_URL}/ws/telemetry`) {
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     if (typeof window === "undefined") return;
