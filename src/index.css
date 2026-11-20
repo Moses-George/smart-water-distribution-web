@@ -150,6 +150,11 @@
 @layer base {
   * { border-color: var(--color-border);
     @apply border-border outline-ring/50; }
+  html, body, #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
   body {
     background:
       radial-gradient(ellipse at top left, oklch(0.75 0.12 220 / 12%), transparent 55%),
@@ -195,4 +200,49 @@
     linear-gradient(var(--color-grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+@media (max-width: 767px) {
+  .module-nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .module-nav ul {
+    scrollbar-width: none;
+  }
+
+  .module-nav li {
+    flex: 0 0 auto;
+  }
+
+  .network-map-canvas {
+    height: 340px !important;
+  }
+
+  .panel-surface table {
+    min-width: 520px;
+  }
+
+  .panel-surface header [class*="flex gap-2"] {
+    max-width: 100%;
+  }
+
+  .kpi-strip {
+    gap: 0.5rem;
+  }
+
+  .recharts-wrapper,
+  .recharts-responsive-container {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 360px) {
+  .kpi-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .network-map-canvas {
+    height: 300px !important;
+  }
 }

@@ -256,7 +256,7 @@ export default function NetworkDashboardPage() {
         </aside>
       )}
       {/* </div> */}
-      <div className="grid grid-cols-1 xl:grid-cols-[1fr_320px gap-4 mt-4">
+      <div className="grid grid-cols-1 gap-4 mt-4">
         <div className="min-w-0">{renderModule()}</div>
         {/* <aside className="xl:sticky xl:top-24 h-max">
           <AuditTrailPanel />

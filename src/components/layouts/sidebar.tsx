@@ -62,11 +62,11 @@ interface SidebarProps {
 
 export function Sidebar({ activeModule, onModuleChange }: SidebarProps) {
   return (
-    <nav className="panel-surface p-3 h-fit sticky top-[76px]">
-      <div className="text-[10px] font-semibold tracking-widest uppercase text-muted-foreground px-2 py-2">
+    <nav className="module-nav panel-surface p-2 sm:p-3 h-fit lg:sticky lg:top-[76px]">
+      <div className="hidden lg:block text-[10px] font-semibold tracking-widest uppercase text-muted-foreground px-2 py-2">
         Modules
       </div>
-      <ul className="flex flex-col gap-0.5">
+      <ul className="flex lg:flex-col gap-1 overflow-x-auto pb-1 lg:pb-0">
         {MODULES.map((m) => {
           const Icon = m.icon;
           const isActive = activeModule === m.id;
@@ -75,7 +75,7 @@ export function Sidebar({ activeModule, onModuleChange }: SidebarProps) {
               <button
                 onClick={() => onModuleChange(m.id)}
                 className={cn(
-                  "w-full flex items-center gap-2.5 px-2.5 py-2 rounded-md text-sm transition text-left",
+                  "lg:w-full flex items-center gap-2 px-3 py-2 lg:px-2.5 rounded-md text-xs sm:text-sm transition whitespace-nowrap text-left",
                   isActive
                     ? "bg-primary/15 text-foreground border border-primary/30"
                     : "text-muted-foreground hover:bg-panel-2 hover:text-foreground border border-transparent"
@@ -89,7 +89,7 @@ export function Sidebar({ activeModule, onModuleChange }: SidebarProps) {
         })}
       </ul>
       
-      <div className="mt-4 p-3 rounded-md bg-panel-2 border border-border">
+      <div className="hidden lg:block mt-4 p-3 rounded-md bg-panel-2 border border-border">
         <div className="flex items-center gap-1.5 text-[11px] font-medium text-[oklch(0.78_0.18_155)]">
           <Activity className="h-3 w-3" /> System Health
         </div>

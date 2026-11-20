@@ -47,7 +47,7 @@ export function NetworkSelector() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-border bg-panel hover:bg-panel-2 transition text-xs min-w-[180px]"
+        className="flex items-center gap-2 px-2 sm:px-3 py-1.5 rounded-md border border-border bg-panel hover:bg-panel-2 transition text-xs w-[145px] sm:w-[180px]"
       >
         <Waves className="h-3.5 w-3.5 text-primary" />
         <span className="truncate flex-1 text-left font-medium">
@@ -57,7 +57,7 @@ export function NetworkSelector() {
       </button>
 
       {open && (
-        <div className="absolute left-0 mt-1 w-72 rounded-lg border border-border bg-background shadow-xl z-50 overflow-hidden">
+        <div className="absolute left-0 mt-1 w-[calc(100vw-1.5rem)] max-w-72 sm:w-72 rounded-lg border border-border bg-background shadow-xl z-50 overflow-hidden">
           <div className="px-3 py-2 border-b border-border text-[10px] uppercase tracking-widest text-muted-foreground">
             Switch network
           </div>

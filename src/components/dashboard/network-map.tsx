@@ -670,7 +670,7 @@ export function NetworkMap({
           ref={svgRef}
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
-          className="relative block w-full"
+          className="network-map-canvas relative block w-full"
           style={{ height, cursor }}
           onClick={onCanvasClick}
           onPointerMove={onPointerMove}

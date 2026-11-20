@@ -52,8 +52,8 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex justify-center items-center fixed h-full inset-0 bg-[#7180967A] backdrop-blur-[1.5px] z-[9999]">
-      <div className="bg-white px-8 py-6 rounded shadow-md md:w-[500px] z-[9999] space-y-6">
+    <div className="flex justify-center items-center fixed h-full inset-0 p-4 bg-[#7180967A] backdrop-blur-[1.5px] z-[9999]">
+      <div className="bg-white px-5 sm:px-8 py-6 rounded shadow-md w-full max-w-[500px] z-[9999] space-y-6">
         <div className="space-y-">
           <h1 className="lg:text-xl text-lg text-gray-800 font-semibold">
             User Authorization is Required

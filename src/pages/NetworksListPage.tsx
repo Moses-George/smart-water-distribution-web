@@ -46,7 +46,7 @@ export default function NetworksListPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-background/50 backdrop-blur sticky top-0 z-30">
-        <div className="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-6">
+        <div className="max-w-[1400px] mx-auto px-3 sm:px-6 py-2 sm:py-3 flex items-center gap-3 sm:gap-6">
           <div className="flex items-center gap-2.5">
             <div
               className="h-8 w-8 rounded-lg grid place-items-center glow-aqua"
@@ -65,15 +65,15 @@ export default function NetworksListPage() {
             <ThemeToggle />
             <button
               onClick={() => dispatch(logout())}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border bg-panel hover:bg-panel-2 transition"
+              className="flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-md border border-border bg-panel hover:bg-panel-2 transition"
             >
-              <LogOut className="h-3.5 w-3.5" /> Logout
+              <LogOut className="h-3.5 w-3.5" /> <span className="hidden sm:inline">Logout</span>
             </button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-[1400px] mx-auto px-6 py-8">
+      <main className="max-w-[1400px] mx-auto px-3 sm:px-6 py-5 sm:py-8">
         <div className="mb-8">
           <h1 className="text-2xl font-semibold tracking-tight">Your networks</h1>
           <p className="text-sm text-muted-foreground mt-1">

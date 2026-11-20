@@ -15,7 +15,7 @@ export function AppLayout({ children, activeModule, onModuleChange }: AppLayoutP
   return (
     <div className="min-h-screen">
       <TopBar />
-      <div className="max-w-[1600px] mx-auto px-6 py-6 grid grid-cols-[240px_1fr] gap-6">
+      <div className="max-w-[1600px] mx-auto px-3 sm:px-6 py-4 sm:py-6 grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-3 sm:gap-6">
         <Sidebar activeModule={activeModule} onModuleChange={onModuleChange} />
         <main className="min-w-0">{children}</main>
       </div>

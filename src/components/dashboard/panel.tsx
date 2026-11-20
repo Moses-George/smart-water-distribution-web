@@ -67,9 +67,9 @@ export function Panel({ title, subtitle, right, children, className }: {
   title?: string; subtitle?: string; right?: ReactNode; children: ReactNode; className?: string;
 }) {
   return (
-    <section className={cn("panel-surface p-5", className)}>
+    <section className={cn("panel-surface p-3 sm:p-5", className)}>
       {(title || right) && (
-        <header className="flex items-start justify-between mb-4 gap-4">
+        <header className="flex flex-wrap items-start justify-between mb-4 gap-2 sm:gap-4">
           <div>
             {title && <h3 className="text-sm font-semibold tracking-wide text-foreground uppercase">{title}</h3>}
             {subtitle && <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>}
@@ -95,10 +95,10 @@ export function Stat({ label, value, unit, trend, tone = "default" }: {
     warning: "text-[oklch(0.82_0.17_65)]",
   }[tone];
   return (
-    <div className="panel-surface p-4 flex flex-col gap-1">
+    <div className="panel-surface p-3 sm:p-4 flex flex-col gap-1 min-w-0">
       <span className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</span>
       <div className="flex items-baseline gap-1.5">
-        <span className={cn("text-3xl font-semibold font-mono tabular-nums", toneClass)}>{value}</span>
+        <span className={cn("text-2xl sm:text-3xl font-semibold font-mono tabular-nums break-words", toneClass)}>{value}</span>
         {unit && <span className="text-xs text-muted-foreground">{unit}</span>}
       </div>
       {trend && <span className="text-[11px] text-muted-foreground">{trend}</span>}

@@ -114,7 +114,7 @@ export function TopBar() {
 
   return (
     <header className="border-b border-border bg-background/50 backdrop-blur sticky top-0 z-30">
-      <div className="max-w-[1600px] mx-auto px-6 py-3 flex items-center gap-4 flex-wrap">
+      <div className="max-w-[1600px] mx-auto px-3 sm:px-6 py-2 sm:py-3 flex items-center gap-2 sm:gap-4 flex-wrap">
         <Link to="/networks" className="flex items-center gap-2.5">
           <div
             className="h-8 w-8 rounded-lg grid place-items-center glow-aqua"

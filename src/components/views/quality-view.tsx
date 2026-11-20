@@ -195,7 +195,7 @@ export default function QualityView() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
       {summary.map((q) => (
         <div key={q.name} className="panel-surface p-4">
           <div className="flex items-center justify-between mb-2">

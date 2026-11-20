@@ -39,7 +39,7 @@ import { Stat } from "./panel";
 
 export function KPIStrip() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+    <div className="kpi-strip grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-6">
       <Stat 
         label="Non-Revenue Water" 
         value={KPIS.nrw} 
